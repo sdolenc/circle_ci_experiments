@@ -19,3 +19,13 @@ jobs:
       - run:
           name: run tests
           command: type apt-get
+
+workflows:
+  version: 2
+  all:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master
